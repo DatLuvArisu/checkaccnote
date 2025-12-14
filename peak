@@ -1,4 +1,4 @@
--- ✅ Account UI + Note + Auto Save + Toggle G + Ẩn/Hiện cuộn lên + Căn góc phải trên
+-- ✅ Account UI + Note + Auto Save + Toggle G + Ẩn/Hiện cuộn lên + Căn góc phải trên + Ẩn tên
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
@@ -42,9 +42,10 @@ labelText.Font = Enum.Font.GothamBold
 labelText.TextSize = 14
 labelText.TextXAlignment = Enum.TextXAlignment.Left
 
--- ACCOUNT NAME
+-- ACCOUNT NAME (ĐÃ SỬA: Che tên)
 local nameText = Instance.new("TextLabel", frame)
-nameText.Text = player.Name
+-- ✅ Lấy 3 ký tự đầu của tên + "***"
+nameText.Text = string.sub(player.Name, 1, 4) .. "***" 
 nameText.Size = UDim2.new(1, -20, 0, 22)
 nameText.Position = UDim2.new(0, 10, 0, 30)
 nameText.BackgroundTransparency = 1
